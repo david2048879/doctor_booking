@@ -27,7 +27,7 @@ const intialDoctorList=
 },
 {
     id: 3,
-    picture: "asset/picture/Gloria",
+    picture: "asset/picture/Gloria.jpg",
     name: 'Dr.Gloria Mukeshimana',
     specialty: 'Cardiology',
     short_biography: 'Dr. Gloria is a consultant cardiologist in the internal medicine department at King Faisal Hospital, Kigali. Her areas of expertise include clinical adult cardiology and interventional cardiology. ',
@@ -61,14 +61,20 @@ const DoctorList: React.FC<doctorListProps> =({}) =>{
     const [doctor, setDoctor]= useState(intialDoctorList)
 
     return(
+        
         <div className="container">
-            <h3>Doctor List</h3>
+           
             {doctor.map(doctor=>
 
             <div className='doctor' key={doctor.id}>
                 <img src={doctor.picture} alt=""  />
+                <div className="detail">
                 <h2>{doctor.name}</h2>
                 <p>{doctor.specialty}</p>
+                <p>{doctor.phone_number}</p>
+                </div>
+                
+                <button>Request Appointment</button>
             </div>
                 
                 
